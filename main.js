@@ -159,21 +159,26 @@ function runPageChange(e, store) {
 const handleMainPageNav = (store) => {
   if (!store) throw new Error("Please add the data store as a parameter");
 
-  computeForEachNavigation((nav) => {
-    const navList = nav.children;
+  const handleUiForMainNav = (nav, i) => {
+    const currentActive = nav.querySelector(".active");
+    currentActive.classList.remove("active");
+    nav.children[i].classList.add("active");
+  };
 
-    [...navList].forEach((li, i) => {
+  computeForEachNavigation((nav, i, arr) => {
+    const navList = [...nav.children];
+    navList.forEach((li, i) => {
       li.addEventListener("click", (e) => {
-        const currentActive = nav.querySelector(".active");
-        currentActive.classList.remove("active");
-        li.classList.add("active");
+        // because there are two navigations, this makes them in sync
+        handleUiForMainNav(arr[0], i);
+        handleUiForMainNav(arr[1], i);
         handleSectionChange(i, store.grabCurrentData());
       });
     });
   });
 };
 
-// highest level function.
+// main function.
 function handlePageChange(lastPage, options) {
   const store = {
     page: lastPage,
@@ -184,7 +189,8 @@ function handlePageChange(lastPage, options) {
       const singleData = data.find(
         (planet) => planet.name.toLowerCase() === this.page.toLowerCase()
       );
-      if (!singleData) new Error("There is an issue with the data.");
+      if (!singleData || typeof singleData !== "object")
+        new Error("There is an issue with the data.");
 
       return singleData;
     },
