@@ -105,7 +105,7 @@ function updatePage(pageData) {
   radiusElem.querySelector(".data-value").innerText = radius;
   tempElem.querySelector(".data-value").innerText = temperature;
 
-  // reset mainPageNav
+  // reset mainPageNavs
   computeForEachNavigation((nav) => {
     resetNavList(nav.children);
     [...nav.children].forEach((li) => {
