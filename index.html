@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planets facts site</title>
+  </head>
+  <body>
+    <img src="/assets/background-stars.svg" 
+    id="background" alt="A background image showing stars"/>
+    <div class="container">
+      <nav class="nav">
+        <h2 class="nav__heading">The Planets</h2>
+        <label
+        class="hamburger-icon"
+        aria-label="Open navigation menu"
+        for="menu-toggle"
+        >&#9776;</label
+      >
+      <input type="checkbox" id="menu-toggle" />
+        <ul class="nav__list">
+          <li class="nav-li li-1"><span></span>MERCURY</li>
+          <li class="nav-li li-2"><span></span>VENUS</li>
+          <li class="nav-li li-3 active"><span></span>EARTH</li>
+          <li class="nav-li li-4"><span></span>MARS</li>
+          <li class="nav-li li-5"><span></span>JUPITER</li>
+          <li class="nav-li li-6"><span></span>SATURN</li>
+          <li class="nav-li li-7"><span></span>URANUS</li>
+          <li class="nav-li li-8"><span></span>NEPTUNE</li>
+        </ul>
+      </nav>
+      <main class="main">
+        <div class="main__nav__mbl">        
+          <ul class="main__nav">
+            <li class="main__nav-li li-3 active">OVERVIEW</li>
+            <li class="main__nav-li li-3">STRUCTURE</li>
+            <li class="main__nav-li li-3">SURFACE</li>
+          </ul>
+        </div>
+        <div class="main__body">
+          <div class="main__body__img__container">
+            <img src="/assets/planet-earth.svg" alt="image of a planet" 
+             loading="lazy"
+              id="main__body--img" />
+          </div>
+            <section class="main__body__info__container">
+              <div class="main__body__info">
+                <h1 class="main__body__info--title">EARTH</h1>
+                <p class="main__body__info--text">
+                  Third planet from the Sun and the only known planet to 
+                  harborlife. 
+                  About 29.2% of Earth's surface is land with remaining 70.8% is 
+                  covered with water. Earth's distance from the Sun, physical 
+                  properties and geological history have allowed life to evolve 
+                  and thrive.</p>
+                <div class="main__body__src">Source: 
+                  <a class="main__body__src--link" 
+                     href="https://en.wikipedia.org/wiki/Earth">
+                    <span class="main__body__src--line">
+                      Wikipedia 
+                    </span>
+                    <img src="/assets/icon-source.svg" alt="source-icon"/>
+                  </a>
+                </div>
+              </div>
+              <!-- desktop main section nav. 
+                Hidden till its the right viewport size-->
+              <div class="main__nav__desktop">        
+                <ul class="main__nav">
+                  <li class="main__nav-li li-3 active">01 OVERVIEW</li>
+                  <li class="main__nav-li li-3">02 STRUCTURE</li>
+                  <li class="main__nav-li li-3">03 SURFACE</li>
+                </ul>
+              </div>
+            </section>
+            <div class="main__body__data">
+              <div class="main__body__data--box data__rotation">
+                <div class="data-title">Rotation Time</div>
+                <div class="data-value">0.99 Days</div>
+              </div>
+              <div class="main__body__data--box data__revolution">
+                <div class="data-title">Revolution Time</div>
+                <div class="data-value">365.2 Days</div>
+              </div>
+              <div class="main__body__data--box data__radius">
+                <div class="data-title">Radius</div>
+                <div class="data-value">6,371 KM</div>
+              </div>
+              <div class="main__body__data--box data__temp">
+                <div class="data-title">Average Temp</div>
+                <div class="data-value">16°c</div>
+              </div>
+            </div>
+        </div>
+      </main>
+      <footer></footer>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
